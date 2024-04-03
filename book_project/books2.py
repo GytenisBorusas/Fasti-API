@@ -65,6 +65,7 @@ async def read_book(book_id: int = Path(gt=0)):
             return book
     raise HTTPException(status_code=404, detail="Item not found")
 
+
 @app.get("/books/", status_code=status.HTTP_200_OK)
 async def read_books_by_rating(book_rating: int = Query(gr=0, lt=6)):
     books_to_return = []
